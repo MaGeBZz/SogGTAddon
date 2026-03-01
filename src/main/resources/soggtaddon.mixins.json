@@ -1,15 +1,18 @@
 {
-  "required": false,
+  "required": true,
+  "minVersion": "0.8",
   "package": "net.sog.core.mixin",
   "compatibilityLevel": "JAVA_17",
-  "minVersion": "0.8",
-  "mixins": [
-    "EmiApiMixin",
-    "SillyMixin"
-  ],
+  "refmap": "mixins.soggtaddon.refmap.json",
   "client": [
+    "GuiGraphicsCountSuffixMixin"
   ],
   "injectors": {
     "defaultRequire": 1
-  }
+  },
+  "mixins": [
+    "EmiApiMixin",
+    "SillyMixin",
+    "ItemStackTooltipMixin"
+  ]
 }
