@@ -20,30 +20,29 @@ import org.spongepowered.asm.mixin.injection.ModifyVariable;
 
 @Mixin(value = EmiApi.class, remap = false)
 public abstract class EmiApiMixin {
-    // BIG Thanks to Phoenix for this!
 
     @ModifyVariable(
-            method = "displayUses",
-            at = @At(
-                    value = "INVOKE",
-                    target = "Ldev/emi/emi/api/stack/EmiIngredient;isEmpty()Z"),
-            argsOnly = true)
+                    method = "displayUses",
+                    at = @At(
+                             value = "INVOKE",
+                             target = "Ldev/emi/emi/api/stack/EmiIngredient;isEmpty()Z"),
+                    argsOnly = true)
     private static EmiIngredient modifyDisplayUses(EmiIngredient stack) {
-        return stack.isEmpty() ? stack : sog$getBucketFluid(stack);
+        return stack.isEmpty() ? stack : gto$getBucketFluid(stack);
     }
 
     @ModifyVariable(
-            method = "displayRecipes",
-            at = @At(
-                    value = "INVOKE",
-                    target = "Ljava/util/List;size()I"),
-            argsOnly = true)
+                    method = "displayRecipes",
+                    at = @At(
+                             value = "INVOKE",
+                             target = "Ljava/util/List;size()I"),
+                    argsOnly = true)
     private static EmiIngredient modifyDisplayRecipes(EmiIngredient stack) {
-        return stack.getEmiStacks().size() != 1 ? stack : sog$getBucketFluid(stack);
+        return stack.getEmiStacks().size() != 1 ? stack : gto$getBucketFluid(stack);
     }
 
     @Unique
-    private static EmiIngredient sog$getBucketFluid(EmiIngredient stack) {
+    private static EmiIngredient gto$getBucketFluid(EmiIngredient stack) {
         if (stack instanceof EmiStack emiStack) {
             Fluid fluid = Fluids.EMPTY;
             if (emiStack.getKey() instanceof BucketItem bucketItem) {
@@ -53,30 +52,17 @@ public abstract class EmiApiMixin {
                 if (nbt.contains("Fluid", Tag.TAG_COMPOUND)) {
                     var fluidTag = nbt.getCompound("Fluid");
                     var fluidName = fluidTag.getString("FluidName");
-                    fluid = sog$getFluid(fluidName);
+                    fluid = gto$getFluid(fluidName);
                 }
             }
-
-            if (fluid == Fluids.EMPTY || sog$isLiquidConcrete(fluid)) {
-                return stack;
-            }
-
-            return EmiStack.of(fluid);
+            return fluid == Fluids.EMPTY ? stack : EmiStack.of(fluid);
         }
         return stack;
     }
 
     @Unique
-    private static Fluid sog$getFluid(String location) {
+    private static Fluid gto$getFluid(String location) {
         var fluid = ForgeRegistries.FLUIDS.getValue(ResourceLocation.parse(location));
         return fluid == null ? Fluids.EMPTY : fluid;
-    }
-
-    @Unique
-    private static boolean sog$isLiquidConcrete(Fluid fluid) {
-        ResourceLocation id = ForgeRegistries.FLUIDS.getKey(fluid);
-        if (id == null) return false;
-
-        return id.getNamespace().equals("gtceu") && id.getPath().equals("concrete");
     }
 }
