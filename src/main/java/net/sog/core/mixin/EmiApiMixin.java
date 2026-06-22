@@ -23,21 +23,21 @@ public abstract class EmiApiMixin {
     // BIG Thanks to Phoenix for this!
 
     @ModifyVariable(
-            method = "displayUses",
-            at = @At(
-                    value = "INVOKE",
-                    target = "Ldev/emi/emi/api/stack/EmiIngredient;isEmpty()Z"),
-            argsOnly = true)
+                    method = "displayUses",
+                    at = @At(
+                             value = "INVOKE",
+                             target = "Ldev/emi/emi/api/stack/EmiIngredient;isEmpty()Z"),
+                    argsOnly = true)
     private static EmiIngredient modifyDisplayUses(EmiIngredient stack) {
         return stack.isEmpty() ? stack : sog$getBucketFluid(stack);
     }
 
     @ModifyVariable(
-            method = "displayRecipes",
-            at = @At(
-                    value = "INVOKE",
-                    target = "Ljava/util/List;size()I"),
-            argsOnly = true)
+                    method = "displayRecipes",
+                    at = @At(
+                             value = "INVOKE",
+                             target = "Ljava/util/List;size()I"),
+                    argsOnly = true)
     private static EmiIngredient modifyDisplayRecipes(EmiIngredient stack) {
         return stack.getEmiStacks().size() != 1 ? stack : sog$getBucketFluid(stack);
     }
