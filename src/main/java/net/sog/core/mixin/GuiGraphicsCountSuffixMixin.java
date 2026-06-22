@@ -15,23 +15,28 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 public abstract class GuiGraphicsCountSuffixMixin {
     // BIG Thanks to Phoenix for this!
 
-    @Inject(method = "drawString(Lnet/minecraft/client/gui/Font;Ljava/lang/String;IIIZ)I",
+    @Inject(
+            method = "drawString(Lnet/minecraft/client/gui/Font;Ljava/lang/String;IIIZ)I",
             at = @At("HEAD"),
             cancellable = true)
     private void sog$compactString(Font font, String text, int x, int y, int color, boolean dropShadow,
                                    CallbackInfoReturnable<Integer> cir) {
         String compacted = CompactCount.compactIfNumeric(text);
+
         if (!compacted.equals(text)) {
-            cir.setReturnValue(this.sog$renderScaled(font, compacted, x, y, color, dropShadow));
+            cir.setReturnValue(gtu$render(font, compacted, x, y, color, dropShadow));
         }
     }
 
-    @Inject(method = "drawString(Lnet/minecraft/client/gui/Font;Lnet/minecraft/util/FormattedCharSequence;IIIZ)I",
+    @Inject(
+            method = "drawString(Lnet/minecraft/client/gui/Font;Lnet/minecraft/util/FormattedCharSequence;IIIZ)I",
             at = @At("HEAD"),
             cancellable = true)
     private void sog$compactSequence(Font font, FormattedCharSequence text, int x, int y, int color,
-                                     boolean dropShadow, CallbackInfoReturnable<Integer> cir) {
+                                     boolean dropShadow,
+                                     CallbackInfoReturnable<Integer> cir) {
         StringBuilder sb = new StringBuilder();
+
         text.accept((index, style, codePoint) -> {
             sb.appendCodePoint(codePoint);
             return true;
@@ -41,29 +46,35 @@ public abstract class GuiGraphicsCountSuffixMixin {
         String compacted = CompactCount.compactIfNumeric(original);
 
         if (!compacted.equals(original)) {
-            cir.setReturnValue(this.sog$renderScaled(font, compacted, x, y, color, dropShadow));
+            cir.setReturnValue(gtu$render(font, compacted, x, y, color, dropShadow));
         }
     }
 
     @Unique
-    private int sog$renderScaled(Font font, String text, int x, int y, int color, boolean shadow) {
+    private int gtu$render(Font font, String text, int x, int y, int color, boolean shadow) {
         GuiGraphics graphics = (GuiGraphics) (Object) this;
+
         float scale = 0.70f;
-
-        float originalWidth = font.width(text);
-        float scaledWidth = originalWidth * scale;
-
-        float xOffset = originalWidth - scaledWidth;
 
         graphics.pose().pushPose();
 
-        graphics.pose().translate(x + xOffset, y + 2, 0);
-
+        graphics.pose().translate(x, y, 0);
         graphics.pose().scale(scale, scale, 1.0f);
 
-        int result = graphics.drawString(font, text, 0, 0, color, shadow);
+        int result = font.drawInBatch(
+                text,
+                0,
+                0,
+                color,
+                shadow,
+                graphics.pose().last().pose(),
+                graphics.bufferSource(),
+                Font.DisplayMode.NORMAL,
+                0,
+                15728880);
 
         graphics.pose().popPose();
+
         return result;
     }
 }
