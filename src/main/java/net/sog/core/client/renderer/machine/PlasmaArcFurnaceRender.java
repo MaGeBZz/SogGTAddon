@@ -37,7 +37,7 @@ public class PlasmaArcFurnaceRender extends DynamicRender<WorkableElectricMultib
 
     // CHANGE: Load two different models
     public static final ResourceLocation SPHERE_MODEL_RL = sogcore.id("obj/blue_star"); // Or a new model for the
-                                                                                        // sphere
+    // sphere
     public static final ResourceLocation RINGS_MODEL_RL = sogcore.id("obj/rings");
 
     private static BakedModel sphereModel;
@@ -76,10 +76,10 @@ public class PlasmaArcFurnaceRender extends DynamicRender<WorkableElectricMultib
 
         // Offset in front of the facing direction by 5 blocks
         switch (machine.getFrontFacing()) {
-            case NORTH -> z -= 20.0;
-            case SOUTH -> z += 20.0;
-            case WEST -> x -= 20.0;
-            case EAST -> x += 20.0;
+            case NORTH -> z += 20.0;
+            case SOUTH -> z -= 20.0;
+            case WEST -> x += 20.0;
+            case EAST -> x -= 20.0;
         }
 
         poseStack.pushPose();
