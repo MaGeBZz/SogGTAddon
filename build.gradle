@@ -170,7 +170,7 @@ dependencies {
     modImplementation("dev.emi:emi-forge:${emi_version}+${minecraft_version}")
     modRuntimeOnly("curse.maven:jade-324717:5390389")
 
-    // Building Gadgets
+    // build gadgets
     modRuntimeOnly("curse.maven:building-gadgets-298187:6850495")
 
     // GregTech and dependencies
@@ -182,17 +182,6 @@ dependencies {
     // lombok
     compileOnly 'org.projectlombok:lombok:1.18.24'
     annotationProcessor 'org.projectlombok:lombok:1.18.24'
-
-    // WorldEdit
-    modRuntimeOnly("curse.maven:worldedit-225608:4586218")
-
-    // FTB Ultimine
-    modRuntimeOnly("curse.maven:ftb-ultimine-forge-386134:7880472")
-    modRuntimeOnly("curse.maven:architectury-api-419699:5137938")
-    modRuntimeOnly("curse.maven:ftb-library-forge-404465:8226927")
-
-    // GTMThings
-    // modRuntimeOnly("curse.maven:gtmthings-1104310:7712957")
 }
 
 // See com.example.examplemod.mixin.DummyMixin for information about mixins

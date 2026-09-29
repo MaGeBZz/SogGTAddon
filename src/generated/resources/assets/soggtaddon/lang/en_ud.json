@@ -3,7 +3,6 @@
   "block.soggtaddon.hadronic_compression_casing": "buısɐƆ uoıssǝɹdɯoƆ ɔıuoɹpɐH",
   "block.soggtaddon.high_energy_collider": "ɹǝpıןןoƆ ʎbɹǝuƎ-ɥbıH",
   "block.soggtaddon.high_energy_collider_casing": "buısɐƆ ɹǝpıןןoƆ ʎbɹǝuƎ ɥbıH",
-  "block.soggtaddon.large_barrel": "ןǝɹɹɐᗺ ǝbɹɐꞀ",
   "block.soggtaddon.quantum_field_stabilization_casing": "buısɐƆ uoıʇɐzıןıqɐʇS pןǝıℲ ɯnʇuɐnὉ",
   "block.soggtaddon.red_block_ezlych": "ʞɔoןᗺ pǝᴚ s,ɥɔʎןzƎ",
   "block.soggtaddon.ultra_dense_collider_casing": "buısɐƆ ɹǝpıןןoƆ ǝsuǝᗡ ɐɹʇן∩",
@@ -14,6 +13,5 @@
   "material.soggtaddon.extremely_modified_space_grade_steel": "ןǝǝʇS ǝpɐɹ⅁ ǝɔɐdS pǝıɟıpoW ʎןǝɯǝɹʇxƎɔ§",
   "material.soggtaddon.quantum_coolant": "ʇuɐןooƆ ɯnʇuɐnὉq§",
   "soggtaddon.tooltip.requires_fluid": "%s :spǝǝN",
-  "tagprefix.nanites": "sǝʇıuɐN %s",
-  "tagprefix.ultradense_plate": "ǝʇɐןԀ %s ǝsuǝᗡ-ɐɹʇן∩"
+  "tagprefix.nanites": "sǝʇıuɐN %s"
 }
