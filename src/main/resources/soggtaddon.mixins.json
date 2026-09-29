@@ -5,12 +5,16 @@
   "compatibilityLevel": "JAVA_17",
   "refmap": "mixins.soggtaddon.refmap.json",
   "client": [
-    "GuiGraphicsCountSuffixMixin"
+    "GuiGraphicsCountSuffixMixin",
+    "emi.EMIFavoritesMixin",
+    "emi.EMIScreenManagerAccessor",
+    "emi.EMIScreenManagerMixin"
   ],
   "injectors": {
     "defaultRequire": 1
   },
   "mixins": [
+    "accessor.MinecraftServerStorageAccessor",
     "EmiApiMixin",
     "SillyMixin",
     "ItemStackTooltipMixin"

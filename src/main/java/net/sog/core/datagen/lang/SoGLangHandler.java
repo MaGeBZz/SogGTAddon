@@ -7,6 +7,7 @@ public class SoGLangHandler {
     public static void init(RegistrateLangProvider provider) {
         provider.add("soggtaddon.tooltip.requires_fluid", "Needs: %s");
         provider.add("tagprefix.nanites", "%s Nanites");
+        provider.add("tagprefix.ultradense_plate", "Ultra-Dense %s Plate");
         provider.add("material.soggtaddon.enriched_tritanium", "Enriched Tritanium");
         provider.add("material.soggtaddon.extremely_modified_space_grade_steel",
                 "§cExtremely Modified Space Grade Steel");
