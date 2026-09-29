@@ -24,10 +24,10 @@ import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.sog.core.client.SoGClient;
 import net.sog.core.common.data.SoGBlocks;
 import net.sog.core.common.data.SoGItems;
+import net.sog.core.common.data.SoGMachines;
 import net.sog.core.common.data.SoGRecipeTypes;
 import net.sog.core.common.data.SoGSounds;
 import net.sog.core.common.data.materials.SoGMaterials;
-import net.sog.core.common.machine.SoGMachines;
 import net.sog.core.common.registry.SoGRegistration;
 import net.sog.core.datagen.SoGDatagen;
 
@@ -84,66 +84,30 @@ public class sogcore {
         LOGGER.info("Hey, we're on Minecraft version {}!", Minecraft.getInstance().getLaunchedVersion());
     }
 
-    /**
-     * Create a ResourceLocation in the format "modid:path"
-     *
-     * @return ResourceLocation with the namespace of your mod
-     */
     public static ResourceLocation id(String path) {
         return new ResourceLocation(MOD_ID, path);
     }
 
-    /**
-     * Create a material manager for your mod using GT's API.
-     * You MUST have this if you have custom materials.
-     * Remember to register them not to GT's namespace, but your own.
-     *
-     */
     private void addMaterialRegistries(MaterialRegistryEvent event) {
         GTCEuAPI.materialManager.createRegistry(sogcore.MOD_ID);
     }
 
-    /**
-     * You will also need this for registering custom materials
-     * Call init() from your Material class(es) here
-     *
-     */
     private void addMaterials(MaterialEvent event) {
         SoGMaterials.register();
     }
 
-    /**
-     * (Optional) Used to modify pre-existing materials from GregTech
-     * 
-     * @param event
-     */
     private void modifyMaterials(PostMaterialEvent event) {
-        // CustomMaterials.modify();
+        // SoGMaterialChanges.modifyMaterials();
     }
 
-    /**
-     * Used to register your own new RecipeTypes.
-     * Call init() from your RecipeType class(es) here
-     *
-     */
     private void registerRecipeTypes(GTCEuAPI.RegisterEvent<ResourceLocation, GTRecipeType> event) {
         SoGRecipeTypes.init();
     }
 
-    /**
-     * Used to register your own new machines.
-     * Call init() from your Machine class(es) here
-     *
-     */
     private void registerMachines(GTCEuAPI.RegisterEvent<ResourceLocation, MachineDefinition> event) {
         SoGMachines.init();
     }
 
-    /**
-     * Used to register your own new sounds
-     * Call init from your Sound class(es) here
-     *
-     */
     public void registerSounds(GTCEuAPI.RegisterEvent<ResourceLocation, SoundEntry> event) {
         SoGSounds.init();
     }
