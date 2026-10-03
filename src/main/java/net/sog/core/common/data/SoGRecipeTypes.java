@@ -13,7 +13,6 @@ public class SoGRecipeTypes {
 
     public static GTRecipeType HIGH_ENERGY_COLLIDER_RECIPES;
     public static GTRecipeType LARGE_BARREL_RECIPES;
-    public static GTRecipeType LARGE_STONE_BARREL_RECIPES;
 
     public static void init() {
         HIGH_ENERGY_COLLIDER_RECIPES = register("high_energy_collider", MULTIBLOCK)
@@ -24,7 +23,7 @@ public class SoGRecipeTypes {
                 .setEUIO(IO.IN);
 
         LARGE_BARREL_RECIPES = register("large_barrel", MULTIBLOCK)
-                .setMaxIOSize(3, 2, 1, 1)
+                .setMaxIOSize(2, 2, 2, 2)
                 .setProgressBar(GuiTextures.PROGRESS_BAR_ARROW, ProgressTexture.FillDirection.LEFT_TO_RIGHT)
                 .setSound(GTSoundEntries.CHEMICAL);
     }
