@@ -37,7 +37,7 @@ public class LargeBarrelMachine extends PrimitiveWorkableMachine implements IUIM
         GhostCircuitSlotWidget circuitSlot = new GhostCircuitSlotWidget();
         circuitSlot.setCircuitInventory(importItems.storage);
 
-        circuitSlot.setSelfPosition(7, 62);
+        circuitSlot.setSelfPosition(7, 25);
         circuitSlot.setBackgroundTexture(
                 new GuiTextureGroup(
                         GuiTextures.SLOT,
@@ -47,44 +47,64 @@ public class LargeBarrelMachine extends PrimitiveWorkableMachine implements IUIM
                 .background(GuiTextures.PRIMITIVE_BACKGROUND)
 
                 // Text
-                .widget(new LabelWidget(55, 18, "Large Barrel"))
+                .widget(new LabelWidget(55, 12, "Large Barrel"))
 
                 // Item Inputs
-                .widget(new SlotWidget(importItems.storage, 1, 30, 42, true, true)
+                .widget(new SlotWidget(importItems.storage, 1, 25, 25, true, true)
                         .setBackgroundTexture(new GuiTextureGroup(
                                 GuiTextures.PRIMITIVE_SLOT)))
 
-                .widget(new SlotWidget(importItems.storage, 2, 48, 42, true, true)
+                .widget(new SlotWidget(importItems.storage, 2, 43, 25, true, true)
                         .setBackgroundTexture(new GuiTextureGroup(
                                 GuiTextures.PRIMITIVE_SLOT)))
 
                 // Item Outputs
-                .widget(new SlotWidget(exportItems.storage, 0, 110, 42, true, false)
+                .widget(new SlotWidget(exportItems.storage, 0, 132, 25, true, false)
                         .setBackgroundTexture(new GuiTextureGroup(
                                 GuiTextures.PRIMITIVE_SLOT)))
 
-                .widget(new SlotWidget(exportItems.storage, 1, 128, 42, true, false)
+                .widget(new SlotWidget(exportItems.storage, 1, 150, 25, true, false)
                         .setBackgroundTexture(new GuiTextureGroup(
                                 GuiTextures.PRIMITIVE_SLOT)))
 
-                // Fluid Input
+                // Fluid Inputs
                 .widget(new TankWidget(
                         importFluids.getStorages()[0],
                         7,
-                        6,
-                        18,
+                        62,
                         54,
+                        18,
                         true,
                         true)
                         .setBackground(GuiTextures.FLUID_SLOT))
 
-                // Fluid Output
+                .widget(new TankWidget(
+                        importFluids.getStorages()[1],
+                        7,
+                        44,
+                        54,
+                        18,
+                        true,
+                        true)
+                        .setBackground(GuiTextures.FLUID_SLOT))
+
+                // Fluid Outputs
                 .widget(new TankWidget(
                         exportFluids.getStorages()[0],
-                        150,
-                        6,
-                        18,
+                        114,
+                        62,
                         54,
+                        18,
+                        true,
+                        false)
+                        .setBackground(GuiTextures.FLUID_SLOT))
+
+                .widget(new TankWidget(
+                        exportFluids.getStorages()[1],
+                        114,
+                        44,
+                        54,
+                        18,
                         true,
                         false)
                         .setBackground(GuiTextures.FLUID_SLOT))
