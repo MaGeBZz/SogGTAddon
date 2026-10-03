@@ -1,0 +1,8 @@
+{
+  "parent": "block/cube_bottom_top",
+  "textures": {
+    "bottom": "gtceu:block/casings/solid/machine_casing_solid_steel",
+    "side": "gtceu:block/casings/solid/machine_casing_solid_steel",
+    "top": "soggtaddon:block/active_casings/steel_crushing_wheels"
+  }
+}

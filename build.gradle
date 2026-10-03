@@ -191,11 +191,20 @@ dependencies {
     modRuntimeOnly("curse.maven:architectury-api-419699:5137938")
     modRuntimeOnly("curse.maven:ftb-library-forge-404465:8226927")
 
+    // FTB Essentials
+    modRuntimeOnly ("curse.maven:ftb-essentials-410811:7609948")
+
+    // MouseTweaks - not loading it while runData
+    if (!gradle.startParameter.taskNames.any { it.equalsIgnoreCase("runData") }) {
+        modRuntimeOnly("curse.maven:mouse-tweaks-60089:5338457")
+    }
+
     // GTMThings
-    // modRuntimeOnly("curse.maven:gtmthings-1104310:7712957")
+    modRuntimeOnly("curse.maven:gtmthings-1104310:7712957")
+    modRuntimeOnly ("curse.maven:applied-energistics-2-223794:8991271")
+    modRuntimeOnly ("curse.maven:guideme-1173950:8204776")
 }
 
-// See com.example.examplemod.mixin.DummyMixin for information about mixins
 mixin {
     add sourceSets.main, "mixins.${mod_id}.refmap.json"
     config "${mod_id}.mixins.json"
@@ -218,6 +227,7 @@ tasks.named('processResources', ProcessResources).configure {
     filesMatching("META-INF/mods.toml") {
         expand properties + [project: project]
     }
+    duplicatesStrategy = DuplicatesStrategy.EXCLUDE
 }
 
 tasks.named('jar', Jar).configure { finalizedBy 'reobfJar' }

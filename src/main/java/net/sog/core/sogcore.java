@@ -22,11 +22,10 @@ import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.sog.core.client.SoGClient;
-import net.sog.core.common.data.SoGBlocks;
 import net.sog.core.common.data.SoGItems;
-import net.sog.core.common.data.SoGMachines;
 import net.sog.core.common.data.SoGRecipeTypes;
 import net.sog.core.common.data.SoGSounds;
+import net.sog.core.common.data.inits.*;
 import net.sog.core.common.data.materials.SoGMaterials;
 import net.sog.core.common.registry.SoGRegistration;
 import net.sog.core.datagen.SoGDatagen;
@@ -69,7 +68,7 @@ public class sogcore {
     public static void init() {
         SoGRegistration.REGISTRATE.registerRegistrate();
         SoGItems.init();
-        SoGBlocks.init();
+        SoGBlockInit.init();
         SoGDatagen.init();
     }
 
@@ -105,7 +104,8 @@ public class sogcore {
     }
 
     private void registerMachines(GTCEuAPI.RegisterEvent<ResourceLocation, MachineDefinition> event) {
-        SoGMachines.init();
+        SoGMultiblocksInit.init();
+        SoGSteamMultiblocksInit.init();
     }
 
     public void registerSounds(GTCEuAPI.RegisterEvent<ResourceLocation, SoundEntry> event) {

@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:block",
+  "pools": [
+    {
+      "bonus_rolls": 0.0,
+      "conditions": [
+        {
+          "condition": "minecraft:survives_explosion"
+        }
+      ],
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "soggtaddon:steel_crushing_wheels"
+        }
+      ],
+      "rolls": 1.0
+    }
+  ],
+  "random_sequence": "soggtaddon:blocks/steel_crushing_wheels"
+}

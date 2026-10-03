@@ -1,0 +1,9 @@
+{
+  "ldlib": {
+    "connection": "soggtaddon:block/active_casings/steel_crushing_wheels_active_ctm"
+  },
+  "animation": {
+    "interpolate": false,
+    "frametime": 2
+  }
+}

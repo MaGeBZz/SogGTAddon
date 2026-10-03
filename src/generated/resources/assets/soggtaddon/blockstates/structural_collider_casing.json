@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "soggtaddon:block/structural_collider_casing"
+    }
+  }
+}

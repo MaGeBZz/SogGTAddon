@@ -1,0 +1,20 @@
+{
+  "block.soggtaddon.advanced_primitive_blast_furnace": "Advanced Primitive Blast Furnace",
+  "block.soggtaddon.hadronic_compression_casing": "Hadronic Compression Casing",
+  "block.soggtaddon.high_energy_collider": "High-Energy Collider",
+  "block.soggtaddon.high_energy_collider_casing": "High-Energy Collider Casing",
+  "block.soggtaddon.large_barrel": "Large Barrel",
+  "block.soggtaddon.large_steel_centrifuge": "Large Steel Centrifuge",
+  "block.soggtaddon.large_steel_compressor": "Large Steel Compressor",
+  "block.soggtaddon.large_steel_forge_hammer": "Large Steel Forge Hammer",
+  "block.soggtaddon.large_steel_grinder": "Large Steel Grinder",
+  "block.soggtaddon.large_steel_oven": "Large Steel Oven",
+  "block.soggtaddon.quantum_field_stabilization_casing": "Quantum-Field Stabilization Casing",
+  "block.soggtaddon.steam_centrifuge": "Steam Centrifuge",
+  "block.soggtaddon.steam_compressor": "Steam Compressor",
+  "block.soggtaddon.steam_forge_hammer": "Steam Forge Hammer",
+  "block.soggtaddon.steel_crushing_wheels": "Steel Crushing Wheels",
+  "block.soggtaddon.structural_collider_casing": "Structural Collider Casing",
+  "block.soggtaddon.ultra_dense_collider_casing": "Ultra-Dense Collider Casing",
+  "block.soggtaddon.uxv_ultimate_battery": "UXV Ultimate Battery"
+}
