@@ -13,6 +13,7 @@ public class SoGRecipeTypes {
 
     public static GTRecipeType HIGH_ENERGY_COLLIDER_RECIPES;
     public static GTRecipeType LARGE_BARREL_RECIPES;
+    public static GTRecipeType LARGE_STONE_BARREL_RECIPES;
 
     public static void init() {
         HIGH_ENERGY_COLLIDER_RECIPES = register("high_energy_collider", MULTIBLOCK)

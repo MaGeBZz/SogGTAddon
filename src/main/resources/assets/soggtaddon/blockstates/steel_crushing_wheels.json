@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "active=false": {
+      "model": "soggtaddon:block/active_casings/steel_crushing_wheels"
+    },
+    "active=true": {
+      "model": "soggtaddon:block/active_casings/steel_crushing_wheels_active"
+    }
+  }
+}

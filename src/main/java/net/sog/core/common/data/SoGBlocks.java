@@ -23,25 +23,14 @@ public class SoGBlocks {
         SoGRegistration.REGISTRATE.creativeModeTab(() -> SOG_CREATIVE_TAB);
     }
 
-    public static final BlockEntry<Block> RED_BLOCK_EZLYCH = SoGRegistration.REGISTRATE
-            .block("red_block_ezlych", Block::new)
-            .initialProperties(() -> Blocks.IRON_BLOCK)
-            .lang("Ezlych's Red Block")
-            .blockstate((ctx, prov) -> {
-                prov.simpleBlock(ctx.getEntry(),
-                        prov.models().cubeAll(ctx.getName(),
-                                prov.modLoc("block/casings/redblock")));
-            })
-            .simpleItem()
-            .register();
-    public static final BlockEntry<Block> COLLIDER_STRUCTURAL_CASING = SoGRegistration.REGISTRATE
-            .block("collider_structural_casing", Block::new)
+    public static final BlockEntry<Block> STRUCTURAL_COLLIDER_CASING = SoGRegistration.REGISTRATE
+            .block("structural_collider_casing", Block::new)
             .initialProperties(() -> Blocks.IRON_BLOCK)
             .lang("Collider Structural Casing")
             .blockstate((ctx, prov) -> {
                 prov.simpleBlock(ctx.getEntry(),
                         prov.models().cubeAll(ctx.getName(),
-                                prov.modLoc("block/casings/collider_structural_casing")));
+                                prov.modLoc("block/casings/structural_collider_casing")));
             })
             .simpleItem()
             .register();
