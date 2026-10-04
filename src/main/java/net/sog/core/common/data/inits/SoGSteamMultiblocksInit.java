@@ -16,5 +16,7 @@ public class SoGSteamMultiblocksInit {
         SteamCompressor.init();
         LargeBarrel.init();
         SteamCentrifuge.init();
+        SteamAlloySmelter.init();
+        LargeSteelAlloySmelter.init();
     }
 }

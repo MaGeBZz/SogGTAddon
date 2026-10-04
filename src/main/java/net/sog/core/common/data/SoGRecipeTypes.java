@@ -23,7 +23,7 @@ public class SoGRecipeTypes {
                 .setEUIO(IO.IN);
 
         LARGE_BARREL_RECIPES = register("large_barrel", MULTIBLOCK)
-                .setMaxIOSize(2, 2, 2, 2)
+                .setMaxIOSize(3, 2, 2, 2)
                 .setProgressBar(GuiTextures.PROGRESS_BAR_ARROW, ProgressTexture.FillDirection.LEFT_TO_RIGHT)
                 .setSound(GTSoundEntries.CHEMICAL);
     }
