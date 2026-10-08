@@ -12,6 +12,7 @@ import com.gregtechceu.gtceu.common.machine.multiblock.steam.SteamParallelMultib
 
 import net.minecraft.core.Direction;
 import net.minecraft.world.level.block.Blocks;
+import net.sog.core.sogcore;
 
 import static com.gregtechceu.gtceu.api.pattern.Predicates.*;
 import static com.gregtechceu.gtceu.common.data.GTBlocks.*;
@@ -64,7 +65,7 @@ public class SteamCompressor {
 
             .workableCasingModel(
                     GTCEu.id("block/casings/solid/machine_casing_bronze_plated_bricks"),
-                    GTCEu.id("block/machines/compressor"))
+                    sogcore.id("block/machines/steam_compressor"))
             .register();
 
     public static void init() {}

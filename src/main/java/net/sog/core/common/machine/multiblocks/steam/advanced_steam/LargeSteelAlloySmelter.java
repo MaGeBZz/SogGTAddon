@@ -14,6 +14,7 @@ import com.gregtechceu.gtceu.common.data.*;
 import net.minecraft.core.Direction;
 import net.minecraft.world.level.block.Blocks;
 import net.sog.core.common.data.helper.AdvancedSteamParallelMultiblockMachine;
+import net.sog.core.sogcore;
 
 import static com.gregtechceu.gtceu.common.data.GTBlocks.*;
 import static net.sog.core.common.data.helper.MultiblockPredicateHelper.blocks;
@@ -52,19 +53,19 @@ public class LargeSteelAlloySmelter {
                     .aisle("CCCCC", "DAAAD", "DAAAD", "ADDDA")
                     .aisle("CCCCC", "DAAAD", "DAAAD", "ADDDA")
                     .aisle("BCCCB", "BDDDB", "ADDDA", "AAAAA")
-                        .where('G', LargeSteelAlloySmelter.LARGE_STEEL_ALLOY_SMELTER, Direction.NORTH)
-                        .where('A', Blocks.AIR)
-                        .where('B', ChemicalHelper.getBlock(TagPrefix.frameGt, GTMaterials.Steel))
-                        .where('C', FIREBOX_STEEL)
-                        .where('D', CASING_STEEL_SOLID)
-                        .where('F', PartAbility.STEAM_IMPORT_ITEMS.getAllBlocks().iterator().next())
-                        .where('H', PartAbility.STEAM_EXPORT_ITEMS.getAllBlocks().iterator().next())
-                        .where('I', PartAbility.STEAM.getAllBlocks().iterator().next())
+                    .where('G', LargeSteelAlloySmelter.LARGE_STEEL_ALLOY_SMELTER, Direction.NORTH)
+                    .where('A', Blocks.AIR)
+                    .where('B', ChemicalHelper.getBlock(TagPrefix.frameGt, GTMaterials.Steel))
+                    .where('C', FIREBOX_STEEL)
+                    .where('D', CASING_STEEL_SOLID)
+                    .where('F', PartAbility.STEAM_IMPORT_ITEMS.getAllBlocks().iterator().next())
+                    .where('H', PartAbility.STEAM_EXPORT_ITEMS.getAllBlocks().iterator().next())
+                    .where('I', PartAbility.STEAM.getAllBlocks().iterator().next())
                     .build())
 
             .workableCasingModel(
                     GTCEu.id("block/casings/solid/machine_casing_solid_steel"),
-                    GTCEu.id("block/machines/alloy_smelter"))
+                    sogcore.id("block/machines/steam_alloy_smelter"))
             .register();
 
     public static void init() {}
