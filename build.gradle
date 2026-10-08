@@ -168,6 +168,7 @@ dependencies {
     modCompileOnly("mezz.jei:jei-${minecraft_version}-common-api:${jei_version}")
     modRuntimeOnly("mezz.jei:jei-${minecraft_version}-forge:${jei_version}")
     modImplementation("dev.emi:emi-forge:${emi_version}+${minecraft_version}")
+    modCompileOnly("curse.maven:jade-324717:5390389")
     modRuntimeOnly("curse.maven:jade-324717:5390389")
 
     // Building Gadgets
@@ -203,6 +204,11 @@ dependencies {
     modRuntimeOnly("curse.maven:gtmthings-1104310:7712957")
     modRuntimeOnly ("curse.maven:applied-energistics-2-223794:8991271")
     modRuntimeOnly ("curse.maven:guideme-1173950:8204776")
+
+    // Trash Cans
+    modRuntimeOnly ("curse.maven:trash-cans-394535:9009341")
+    modRuntimeOnly ("curse.maven:supermartijn642s-config-lib-438332:4715408")
+    modRuntimeOnly ("curse.maven:supermartijn642s-core-lib-454372:9083446")
 }
 
 mixin {

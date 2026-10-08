@@ -15,6 +15,7 @@ import net.minecraft.core.Direction;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.DirectionalBlock;
 import net.sog.core.common.data.helper.AdvancedSteamParallelMultiblockMachine;
+import net.sog.core.sogcore;
 
 import static com.gregtechceu.gtceu.api.pattern.Predicates.*;
 import static com.gregtechceu.gtceu.common.data.GTBlocks.*;
@@ -69,7 +70,7 @@ public class LargeSteelForgeHammer {
 
             .workableCasingModel(
                     GTCEu.id("block/casings/solid/machine_casing_solid_steel"),
-                    GTCEu.id("block/machines/compressor"))
+                    sogcore.id("block/machines/steam_forge_hammer"))
             .register();
 
     public static void init() {}
